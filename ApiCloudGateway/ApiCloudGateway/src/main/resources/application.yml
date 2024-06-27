@@ -1,0 +1,36 @@
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost
+server:
+  port: 8989
+spring:
+  application:
+    name: ApiCloudGateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+      - id: paymentApi
+        predicates:
+        - Path=/payment/**
+        uri: lb://payment-api
+      - id: railAPI
+        predicates:
+        - Path=/rail/**
+        uri: lb://rail-api
+management:
+  endpoints:   
+    web:
+      exposure:
+        include: '*'
+  tracing:    
+    sampling:
+       probability: 1.0  

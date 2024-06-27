@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="ApiCloudGateway/src/main/java"/>
+	<classpathentry kind="src" path="ApiCloudGateway/src/test/java"/>
+	<classpathentry kind="lib" path="ApiCloudGateway/.mvn/wrapper/maven-wrapper.jar"/>
+	<classpathentry kind="output" path="ApiCloudGateway/target/classes"/>
+</classpath>
